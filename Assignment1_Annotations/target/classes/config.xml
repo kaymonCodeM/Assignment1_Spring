@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> <!-- bean definitions here -->
+
+    <context:component-scan base-package="org.annotations"/>
+
+    <bean id="student" class="org.annotations.Student">
+        <property name="id" value="12345"/>
+        <property name="name" value="Kaymon McCain"/>
+    </bean>
+
+    <bean id="phone" class="org.annotations.Phone">
+        <property name="mob" value="402-961-3221"/>
+    </bean>
+
+    <bean id="phone2" class="org.annotations.Phone">
+        <property name="mob" value="402-248-9452"/>
+    </bean>
+    <bean id="phone3" class="org.annotations.Phone">
+        <property name="mob" value="531-847-6614"/>
+    </bean>
+
+    <bean id="address" class="org.annotations.Address">
+        <property name="city" value="Lincoln"/>
+        <property name="state" value="NE"/>
+        <property name="country" value="US"/>
+        <property name="zipcode" value="68528"/>
+    </bean>
+
+</beans>
