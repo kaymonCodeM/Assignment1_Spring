@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/util
+   		   http://www.springframework.org/schema/util/spring-util.xsd">
+    <!-- bean definitions here -->
+
+    <bean id="student" class="org.xmlconfig.Student">
+        <property name="id" value="12345"/>
+        <property name="name" value="Kaymon McCain"/>
+        <property name="ph" ref="phoneList"/>
+        <property name="add" ref="address"/>
+    </bean>
+
+    <util:list id="phoneList" value-type="org.xmlconfig.Phone">
+        <ref bean="phone1"/>
+        <ref bean="phone2"/>
+        <ref bean="phone3"/>
+    </util:list>
+    <bean id="phone1" class="org.xmlconfig.Phone">
+        <property name="mob" value="402-961-3221"/>
+    </bean>
+
+    <bean id="phone2" class="org.xmlconfig.Phone">
+        <property name="mob" value="402-248-9452"/>
+    </bean>
+    <bean id="phone3" class="org.xmlconfig.Phone">
+        <property name="mob" value="531-847-6614"/>
+    </bean>
+
+    <bean id="address" class="org.xmlconfig.Address">
+        <property name="city" value="Lincoln"/>
+        <property name="state" value="NE"/>
+        <property name="country" value="US"/>
+        <property name="zipcode" value="68528"/>
+    </bean>
+</beans>
