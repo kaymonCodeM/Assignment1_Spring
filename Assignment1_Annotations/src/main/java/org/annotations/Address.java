@@ -1,12 +1,17 @@
 package org.annotations;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Address {
+    @Value("#{new java.lang.String('Lincoln')}")
     private String city;
+    @Value("#{new java.lang.String('NE')}")
     private String state;
+    @Value("#{new java.lang.String('US')}")
     private String country;
+    @Value("#{new java.lang.String('53148')}")
     private String zipcode;
 
     public String getCity() {

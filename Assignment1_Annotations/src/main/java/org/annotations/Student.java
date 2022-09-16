@@ -1,9 +1,7 @@
 
 package org.annotations;
-import org.annotations.Address;
-import org.annotations.Phone;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -11,9 +9,10 @@ import java.util.List;
 @Component
 public class Student {
 
+    @Value("#{741247}")
     private int id;
+    @Value("#{new java.lang.String('Kaymon McCain')}")
     private String name;
-
     @Autowired
     private List<Phone> ph;
     @Autowired
